@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\ChurchSite.Data\ChurchSite.Data.csproj" />
+    <ProjectReference Include="..\ChurchSite.Data\ChurchSite.Data.csproj" />
   </ItemGroup>
 
 
