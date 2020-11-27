@@ -1,0 +1,13 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+@foreach (var item in ViewContext.RouteData.Values.Keys)
+{
+    <p>Key: @item - Value: @ViewContext.RouteData.Values[item]</p>
+}
+@*<p>@ViewContext.RouteData.Values.ToString()</p>*@

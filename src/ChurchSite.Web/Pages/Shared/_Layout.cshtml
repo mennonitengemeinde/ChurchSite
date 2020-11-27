@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Mennoniten Gemeinde</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/shared/variables.css" />
+    <link rel="stylesheet" href="~/css/shared/site.css" />
+    <link rel="stylesheet" href="~/css/shared/navbar.css" />
+    <link rel="stylesheet" href="~/css/shared/buttons.css" />
+    <link rel="stylesheet" href="~/css/shared/text.css" />
+    <link rel="stylesheet" href="~/css/shared/backgrounds.css" />
+    <link rel="stylesheet" href="~/css/home.css" />
+</head>
+<body>
+    <header class="shadow">
+        <div class="bg-white text-center pt-1">
+            <img class="img-fluid nav-logo" src="~/img/mennonitengemeinde-text-round-logo-25.png" alt="Logo">
+        </div>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom">
+            <div class="container-fluid">
+                @*<a class="navbar-brand" asp-area="" asp-page="/Index">Home</a>*@
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav mt-2 flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["page"].ToString() == "/Index" ? "active" : "")" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["page"].ToString() == "/Events" ? "active" : "")" asp-area="" asp-page="/Index">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["page"].ToString() == "/Sermons" ? "active" : "")" asp-area="" asp-page="/Index">Sermons</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["page"].ToString() == "/Live" ? "active" : "")" asp-area="" asp-page="/Index">Live</a>
+                        </li>
+                        @*<li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["page"].ToString() == "/Privacy" ? "active" : "")" asp-area="" asp-page="/Privacy">Privacy</a>
+                        </li>*@
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    @*<footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - ChurchSite.Web - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>*@
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
